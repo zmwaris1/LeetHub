@@ -8,7 +8,7 @@ class Solution:
                 d[i] = 1
                 
         for i in d:
-            value = d[i]
+            value = d.get(i)
             if value>1:
                 return True
             else:
