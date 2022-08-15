@@ -1,7 +1,9 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        note, mag = Counter(ransomNote), Counter(magazine)
-        if note & mag == note:
-            return True
-        else:
-            return False
+        magazine = list(magazine)
+        for i in ransomNote:
+            if i in magazine:
+                magazine.remove(i)
+            else:
+                return False
+        return True
